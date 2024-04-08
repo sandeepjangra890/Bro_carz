@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 400px; /* Adjust width as needed */
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.payment-details {
+    margin-bottom: 20px;
+}
+
+.payment-status {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.payment-status.active {
+    opacity: 1;
+}
+
+.payment-status i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <form action="#">
+        <h2>Payment</h2>
+        <p>Enter your payment details.</p>
+        <div class="payment-details">
+            </div>
+        <button type="submit" class="payment-btn">Pay Now</button>
+        <div class="payment-status hidden">
+            <i class="fa fa-check-circle"></i>  <p>Payment Successful!</p>
+        </div>
+    </form>
+    <script src="script.js">
+      const paymentBtn = document.querySelector('.payment-btn');
+const paymentStatus = document.querySelector('.payment-status');
+
+paymentBtn.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent form submission (for demo)
+  paymentStatus.classList.add('active');
+
+  // Simulate a delay for the animation
+  setTimeout(function() {
+    paymentStatus.classList.remove('active');
+  }, 2000); // Adjust delay as needed
+});
+
+
+
+    </script>
+</body>
+</html>

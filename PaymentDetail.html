@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container1 {
+    width: 80vw;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.session-message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f00;
+}
+
+.form-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="text"], input[type="email"], input[type="tel"] 
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.container {
+    width: 40vw;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.payment-info {
+    padding: 30px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-wrap: wrap;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background-color: #04AA6D;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+ input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #04AA6D;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    float: right; /* Right-align the button */
+}
+.payment-details {
+    margin-bottom: 20px;
+}
+
+.payment-status {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.payment-status.active {
+    opacity: 1;
+}
+
+.payment-status i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="form-wrapper">
+            <h2>Personal Details</h2>
+            <form action="#">
+                <div class="form-group">
+                    <label for="title">Title: *</label>
+                    <select name="title" id="title" required>
+                        <option value="mr">Mr.</option>
+                        <option value="mrs">Mrs.</option>
+                        <option value="ms">Ms.</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name: *</label>
+                    <input type="text" name="firstName" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name: *</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address: *</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmEmail">Confirm Email address: *</label>
+                    <input type="email" name="confirmEmail" id="confirmEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number: *</label>
+                    <input type="tel" name="mobileNumber" id="mobileNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="keepUpdated">
+                        <input type="checkbox" name="keepUpdated" id="keepUpdated"> Keep up to date on news and offers. You can unsubscribe at any time.
+                    </label>
+
+                </div>
+                <h2>Billing address</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="companyName">Company Name: *</label>
+                <input type="text" name="companyName" id="companyName" required>
+            </div>
+            <div class="form-group">
+                <label for="addressLine1">Address line 1: *</label>
+                <input type="text" name="addressLine1" id="addressLine1" required>
+            </div>
+            <div class="form-group">
+                <label for="addressLine2">Address line 2:</label>
+                <input type="text" name="addressLine2" id="addressLine2">
+            </div>
+            <div class="form-group">
+                <label for="addressLine3">Address line 3:</label>
+                <input type="text" name="addressLine3" id="addressLine3">
+            </div>
+            <div class="form-group">
+                <label for="cityTown">City / Town: *</label>
+                <input type="text" name="cityTown" id="cityTown" required>
+            </div>
+            <div class="form-group">
+                <label for="postcode">Postcode: *</label>
+                <input type="text" name="postcode" id="postcode" required>
+            </div>
+            <div class="form-group">
+                <label for="countryRegion">Country/Region: *</label>
+                <select name="countryRegion" id="countryRegion"  required>
+                        <option value="IN">India</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="JP">Japan</option>
+                        <option value="BR">Brazil</option>
+                        <option value="CN">China</option>
+                    </select>
+            </div>
+           
+    
+        <div class="container">
+            <div class="payment-info">
+                <h2>Payment</h2>
+                <p>Please select the debit or credit card you would like to use. This card must be in the name of the main driver as it will be checked at the desk. While we accept prepaid cards for online payments, a supplementary non-prepaid card must be provided upon collection.</p>
+                <label for="cardType">Payment card type:</label>
+                <select name="cardType" id="cardType">
+                    <option value="visa">VISA</option>
+                    <option value="amex">AMERICAN EXPRESS</option>
+                    <option value="amex">RUPAY</option>
+                    <option value="amex">MASTER CARD</option>
+                    <option value="amex">UNION PAY  </option>
+                    <option value="amex">JCB</option>
+                </select>
+                <label for="cardNumber">Payment card number*: </label>
+                <input type="text" name="cardNumber" id="cardNumber" required>
+                <label for="cardName">Name on card*: </label>
+                <input type="text" name="cardName" id="cardName" required>
+                <label for="expiryDate">Expiry date*: </label>
+                <input type="text" name="expiryDate" id="expiryDate" placeholder="MM/YY" required>
+                <label for="cvv">CVV security code*: </label>
+                <input type="text" name="cvv" id="cvv" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit Payment</button>
+        
+        
+        </form>
+    </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <form id="rental-form">
+      <div class="section">
+        <h2>Collect From:</h2>
+        <div class="input-group">
+          <label for="location">Airport, postcode, city...</label>
+          <input type="text" id="location" name="location" placeholder="Enter location" required>
+        </div>
+        <div class="inline-checkbox">
+          <input type="checkbox" id="return-different" name="return-different">
+          <label for="return-different">Choose a different return location</label>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Date & Time:</h2>
+        <div class="date-time-group">
+          <div class="date-picker">
+            <label for="from-date">Date From:</label>
+            <input type="date" id="from-date" name="from-date" required>
+            <input type="time" id="from-time" name="from-time" required>
+          </div>
+          <div class="date-picker">
+            <label for="to-date">Date To:</label>
+            <input type="date" id="to-date" name="to-date" required>
+            <input type="time" id="to-time" name="to-time" required>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Rental Type:</h2>
+        <div class="radio-group">
+          <input type="radio" id="rental-leisure" name="rental-type" value="leisure" checked required>
+          <label for="rental-leisure">Leisure</label>
+          <input type="radio" id="rental-business" name="rental-type" value="business">
+          <label for="rental-business">Business</label>
+          <input type="radio" id="rental-other" name="rental-type" value="other">
+          <label for="rental-other">Other</label>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Driver Age:</h2>
+        <div class="radio-group">
+          <input type="radio" id="driver-over-25" name="driver-age" value="over-25" checked required>
+          <label for="driver-over-25">Driver aged over 25</label>
+          <input type="radio" id="driver-under-25" name="driver-age" value="under-25">
+          <label for="driver-under-25">Driver under 25 (additional fees may apply)</label>
+        </div>
+      </div>
+      <div class="section">
+        <div class="checkbox-group">
+          <input type="checkbox" id="discount-code" name="discount-code">
+          <label for="discount-code">I have a discount code</label>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Payment Options:</h2>
+        <div class="payment-group">
+          <div class="payment-option">
+            <h3>Pay on Collection</h3>
+            <p>Pay at the rental desk when you collect the car. Includes basic insurance cover (refer to terms and conditions for details).</p>
+            <button type="submit">Select</button>
+          </div>
+          <div class="payment-option">
+            <h3>Pay Online</h3>
+            <p>Securely pay for your rental online and save time at the rental desk. Additional benefits may apply (refer to terms and conditions for details).</p>
+            <button type="submit">Select</button>
+          </div>
+        </div>
+        <p class="fee">A fee may apply for rentals less than 24 hours.</p>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
